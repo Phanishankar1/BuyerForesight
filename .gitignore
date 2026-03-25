@@ -9,6 +9,7 @@ lerna-debug.log*
 vite-dev.err
 
 node_modules
+.npm-cache
 dist
 dist-ssr
 *.local
