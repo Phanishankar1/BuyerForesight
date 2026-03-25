@@ -6,8 +6,11 @@ const SORT_OPTIONS = {
   company: (user) => user.company.name.toLowerCase(),
 }
 
+const BASE_PATH = import.meta.env.BASE_URL.replace(/\/$/, '')
+
 function getRoute(pathname) {
-  const match = pathname.match(/^\/user\/(\d+)\/?$/)
+  const appPath = stripBasePath(pathname)
+  const match = appPath.match(/^\/user\/(\d+)\/?$/)
 
   if (match) {
     return { view: 'detail', userId: Number(match[1]) }
@@ -102,8 +105,9 @@ function App() {
   const cityCount = new Set(users.map((user) => user.address.city)).size
 
   function navigateTo(pathname) {
-    window.history.pushState({}, '', pathname)
-    setRoute(getRoute(pathname))
+    const nextPath = pathname === '/' ? `${BASE_PATH}/` : `${BASE_PATH}${pathname}`
+    window.history.pushState({}, '', nextPath)
+    setRoute(getRoute(nextPath))
   }
 
   function handleSort(field) {
@@ -542,6 +546,15 @@ function getInitials(name) {
     .slice(0, 2)
     .map((part) => part[0])
     .join('')
+}
+
+function stripBasePath(pathname) {
+  if (BASE_PATH && pathname.startsWith(BASE_PATH)) {
+    const strippedPath = pathname.slice(BASE_PATH.length)
+    return strippedPath || '/'
+  }
+
+  return pathname || '/'
 }
 
 export default App
