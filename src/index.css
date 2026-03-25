@@ -1,0 +1,95 @@
+:root {
+  --bg-start: #f4efe7;
+  --bg-mid: #f8f4ee;
+  --bg-end: #efe3d5;
+  --panel-bg: rgba(255, 250, 244, 0.74);
+  --card-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(244, 233, 220, 0.75));
+  --table-bg: rgba(255, 255, 255, 0.74);
+  --table-head-bg: rgba(245, 238, 228, 0.92);
+  --table-row-hover: rgba(244, 234, 218, 0.82);
+  --panel-border: rgba(35, 31, 26, 0.08);
+  --panel-shadow: rgba(73, 52, 25, 0.08);
+  --input-border: rgba(60, 48, 38, 0.12);
+  --input-bg: rgba(255, 255, 255, 0.82);
+  --button-bg: rgba(255, 255, 255, 0.72);
+  --pill-bg: rgba(255, 248, 240, 0.72);
+  --text-strong: #231c16;
+  --text-medium: #453a31;
+  --text-soft: #645649;
+  --muted-text: #7c6c5e;
+  --accent-soft: #9a5a18;
+  --skeleton-base: rgba(210, 195, 176, 0.55);
+  --focus-ring: rgba(41, 101, 255, 0.22);
+
+  font-family: Inter, 'Segoe UI', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--text-strong);
+  background: var(--bg-start);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root[data-theme='dark'] {
+  --bg-start: #11161d;
+  --bg-mid: #161d26;
+  --bg-end: #0d131b;
+  --panel-bg: rgba(20, 28, 38, 0.78);
+  --card-bg: linear-gradient(180deg, rgba(31, 42, 57, 0.92), rgba(20, 29, 38, 0.88));
+  --table-bg: rgba(17, 24, 33, 0.85);
+  --table-head-bg: rgba(27, 36, 48, 0.92);
+  --table-row-hover: rgba(35, 48, 63, 0.92);
+  --panel-border: rgba(168, 188, 211, 0.12);
+  --panel-shadow: rgba(0, 0, 0, 0.28);
+  --input-border: rgba(157, 180, 206, 0.14);
+  --input-bg: rgba(19, 26, 35, 0.88);
+  --button-bg: rgba(24, 33, 44, 0.9);
+  --pill-bg: rgba(29, 39, 52, 0.92);
+  --text-strong: #eef4ff;
+  --text-medium: #d6e0ee;
+  --text-soft: #aab8cb;
+  --muted-text: #93a4ba;
+  --accent-soft: #ffb367;
+  --skeleton-base: rgba(88, 105, 128, 0.48);
+  --focus-ring: rgba(94, 156, 255, 0.38);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--text-strong);
+  background: var(--bg-start);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  color: inherit;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
